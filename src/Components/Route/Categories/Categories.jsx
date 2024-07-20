@@ -31,7 +31,7 @@ const Categories = () => {
                     {
                         categoriesData && categoriesData.map((i) => {
                             const handleSubmit = (i) => {
-                                Navigate(`/products?category=${i.title}`)
+                                navigate(`/products?category=${i.title}`)
                             }
                             return(
                                 <div className='w-full h-[100px] flex items-center justify-between cursor-pointer overflow-hidden' key={i.id}
