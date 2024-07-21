@@ -2,9 +2,9 @@ import React from 'react'
 import styles from '../../../styles/styles'
 import CountDown from '../../CountDown/CountDown'
 
-const EventCard = () => {
+const EventCard = ({ active }) => {
     return (
-        <div className={ `w-full block bg-white rounded-lg lg:flex p-2 mb-12` }>
+        <div className={ `w-full block bg-white rounded-lg ${active ? 'unset' : 'mb-12'} lg:flex p-2 mb-12` }>
             <div className='w-full lg:w-[50%] m-auto'>
                 <img src='https://m.media-amazon.com/images/I/31Vle5fVdaL.jpg' alt='' />
             </div>
@@ -15,7 +15,7 @@ const EventCard = () => {
                     aliquam. Aliquam erat volutpat. Etiam vel dui et leo feugiat efficitur. Sed euismod, dui sit amet
                     ornare aliquet, libero odio.
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae
-                    vestibulum vestibulum. 
+                    vestibulum vestibulum.
                 </p>
                 <div className='flex py-2 justify-between'>
                     <div className='flex'>
@@ -29,10 +29,10 @@ const EventCard = () => {
                     <span className='pr-3 font-[400] text-[17px] text-[#44a55e]'>
                         120 sold
                     </span>
-                    
+
                 </div>
                 <div>
-                    <CountDown/>
+                    <CountDown />
                 </div>
             </div>
         </div>
