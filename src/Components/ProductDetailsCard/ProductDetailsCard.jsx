@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import { RxCross1 } from "react-icons/rx";
 import styles from '../../styles/styles';
-import { AiOutlineMessage } from 'react-icons/ai';
+
+import { AiFillHeart, AiOutlineMessage, AiOutlineHeart, AiOutlineShoppingCart } from 'react-icons/ai';
+
 const ProductDetailsCard = ({ setOpen, data }) => {
     const [count, setCount] = useState(1);
     const [click, setClick] = useState(false);
-    const [select, setSelect] = useState(false);
+    // const [select, setSelect] = useState(false);
 
     const handleMessageSubmit = () => {
 
@@ -86,7 +88,31 @@ const ProductDetailsCard = ({ setOpen, data }) => {
                                             +
                                         </button>
                                     </div>
+                                    <div>
+                                        { click ? (
+                                            <AiFillHeart
+                                                size={ 30 }
+                                                className='cursor-pointer '
+                                                color={ click ? 'red' : '#000000' }
+                                                onClick={ () => setClick(!click) }
+                                                title='Remove from wishlist'
+                                            />
+                                        ) : (
+                                            <AiOutlineHeart
+                                                size={ 30 }
+                                                className='cursor-pointer '
+                                                color={ click ? 'red' : '#000000' }
+                                                onClick={ () => setClick(!click) }
+                                                title='Add to wishlist'
+                                            />
+                                        ) }
+                                    </div>
                                 </div>
+                                    <div className={`${styles.button} mt-6 rounded-[4px] h-11 flex items-center`}>
+                                        <span className='text-[#fff] flex items-center'>
+                                            Add to cart <AiOutlineShoppingCart className='ml-1'/>
+                                        </span>
+                                    </div>
                             </div>
 
 

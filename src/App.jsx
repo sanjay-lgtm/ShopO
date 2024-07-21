@@ -1,11 +1,10 @@
 import React, { useEffect } from "react"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { ActivationPage, HomePage, LoginPage, SignUpPage } from "./Routes";
+import { ActivationPage, HomePage, LoginPage, ProductsPage, SignUpPage } from "./Routes";
 
 
 import store from "./redux/store";
 import { loadUser } from "./redux/actions/user";
-import ProductsPage from "./Pages/ProductsPage";
 
 
 function App() {
