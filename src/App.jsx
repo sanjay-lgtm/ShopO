@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { ActivationPage, BestSellingPage, EventsPage, FAQPage, HomePage, LoginPage, ProductsPage, SignUpPage } from "./Routes";
+import { ActivationPage, BestSellingPage, EventsPage, FAQPage, HomePage, LoginPage, ProductDetailsPage, ProductsPage, SignUpPage } from "./Routes";
 
 
 import store from "./redux/store";
@@ -26,6 +26,8 @@ function App() {
                 <Route path="/sign-up" element={ <SignUpPage /> } />
                 <Route path="/activation/:activation_token" element={ <ActivationPage /> } />
                 <Route path="/products" element={ <ProductsPage /> } />
+                <Route path="/product/:name" element={ <ProductDetailsPage/> } />
+
                 <Route path="/best-selling" element={ <BestSellingPage /> } />
                 <Route path="/events" element={ <EventsPage /> } />
                 <Route path="/faq" element={ <FAQPage /> } />

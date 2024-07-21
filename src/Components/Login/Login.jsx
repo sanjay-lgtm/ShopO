@@ -32,7 +32,7 @@ const Login = () => {
 
                 });
                 navigate('/');
-                // window.location.reload(true);
+                window.location.reload(true);
             }).catch((error) => {
                 toast.error('🦄 Wow so easy!', {
                     position: "top-right",
