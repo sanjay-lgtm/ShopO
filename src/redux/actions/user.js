@@ -1,24 +1,13 @@
+import axios from "axios";
+import { server } from "../../server";
+import { loadUserRequest, loadUserSuccess, loadUserFailure } from "../reducers/user";
 
-
-//load user
-
-import axios from "axios"
-import { server } from "../../server"
-
-export const  loadUser = () =>  async(dispatch)=>{
-    try {
-        dispatch({
-           type: "LoadUserRequest",
-        })
-        const {data} = await axios.get(`${server}/user/getuser`,{withCredentials:true});
-        dispatch({
-            type: "LoadUserSuccess",  
-            payload:data.user
-        })
-    } catch (error) {
-        dispatch({
-            type: "LoadUserFailure",
-            payload: error.response.data.message
-        })
-    }
-}
+export const loadUser = () => async (dispatch) => {
+  dispatch(loadUserRequest());
+  try {
+    const { data } = await axios.get(`${server}/user/getuser`, { withCredentials: true });
+    dispatch(loadUserSuccess(data.user));
+  } catch (error) {
+    dispatch(loadUserFailure(error.response.data.message));
+  }
+};

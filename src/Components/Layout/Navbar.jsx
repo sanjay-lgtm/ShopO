@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const Navbar = ({ active }) => {
     return (
-        <div className={ `${styles.noramlFlex}` }>
+        <div className={ `block 800px:${styles.noramlFlex}` }>
             {
                 navItems && navItems.map((i, index) => (
                     <div className="flex">
